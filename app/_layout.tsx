@@ -1,39 +1,65 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { StatusBar } from 'expo-status-bar';
-import { useEffect } from 'react';
-import 'react-native-reanimated';
+import { StyleSheet, Text, View } from "react-native";
+import { Stack, Tabs } from "expo-router";
+import { Image } from "react-native";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
-import { useColorScheme } from '@/hooks/useColorScheme';
+import React from "react";
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
-
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  });
-
-  useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded]);
-
-  if (!loaded) {
-    return null;
-  }
+const RootLayout = () => {
+  const profilePicture = require("@/assets/images/Profile.png");
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <Stack>
+      <Stack.Screen
+        name="(tabs)"
+        options={{
+          title: "My home",
+          // headerStyle: { backgroundColor: "#f4511e" },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+
+          headerTitle: () => (
+            <View style={styles.stackContainer}>
+              <View style={styles.profileContainer}>
+                <Image source={profilePicture} style={styles.profilePic} />
+                <View>
+                  <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+                    Chelsea Immanuela
+                  </Text>
+                  <Text style={{ fontWeight: "light" }}>Personal Account</Text>
+                </View>
+              </View>
+              <Ionicons name="sunny-outline" size={38} color="#25292e" />
+            </View>
+          ),
+        }}
+      />
+    </Stack>
   );
-}
+};
+
+export default RootLayout;
+
+const styles = StyleSheet.create({
+  stackContainer: {
+    padding: 4,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  profileContainer: {
+    flexDirection: "row",
+    gap: 8,
+    alignItems: "center",
+  },
+
+  profilePic: {
+    borderRadius: 100,
+    borderWidth: 5,
+    borderColor: "#19918F",
+    width: 60,
+    height: 60,
+  },
+});
