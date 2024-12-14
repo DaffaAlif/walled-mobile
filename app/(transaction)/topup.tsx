@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import AmountInput from "@/components/AmountInput";
-import Notesinput from "@/components/NotesInput";
-import DropdownPicker from "@/components/DropdownPicker";
-import ButtonText from "@/components/ButtonText";
+import AmountInput from "@/components/SharedComponents/AmountInput";
+import Notesinput from "@/components/SharedComponents/NotesInput";
+import DropdownPicker from "@/components/SharedComponents/DropdownPicker";
+import ButtonText from "@/components/SharedComponents/ButtonText";
 
 const TopUpPage = () => {
   return (

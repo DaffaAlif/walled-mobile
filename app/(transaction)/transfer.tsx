@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import AmountInput from "@/components/AmountInput";
-import Notesinput from "@/components/NotesInput";
+import AmountInput from "@/components/SharedComponents/AmountInput";
+import Notesinput from "@/components/SharedComponents/NotesInput";
 
-import ButtonText from "@/components/ButtonText";
+import ButtonText from "@/components/SharedComponents/ButtonText";
 
 const TransferPage = () => {
   return (

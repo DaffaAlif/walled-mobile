@@ -1,10 +1,12 @@
 import { StyleSheet, Text, View } from "react-native";
+import LoginForm from "@/components/Login/LoginForm";
+
 import React from "react";
 
 const LoginPage = () => {
   return (
     <View style={styles.container}>
-      <Text>LoginPage</Text>
+      <LoginForm />
     </View>
   );
 };
@@ -13,10 +15,9 @@ export default LoginPage;
 
 const styles = StyleSheet.create({
   container: {
-    padding: 15,
-    margin: 20,
     backgroundColor: "#fff",
-    borderRadius: 10,
-    maxHeight: 300,
+    flex: 1,
+    justifyContent:'center',
+    alignItems:'center'
   },
 });

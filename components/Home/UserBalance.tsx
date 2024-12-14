@@ -1,6 +1,6 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import IconButton from "../IconButton";
+import IconButton from "../SharedComponents/IconButton";
 import React from "react";
 
 const UserBalance = () => {
