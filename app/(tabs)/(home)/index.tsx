@@ -1,9 +1,9 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import UserGreeting from '@/components/UserGreeting'
-import UserAccountNo from '@/components/UserAccountNo'
-import UserBalance from '@/components/UserBalance'
-import TransactionTable from '@/components/TransactionTable'
+import UserGreeting from '@/components/Home/UserGreeting'
+import UserAccountNo from '@/components/Home/UserAccountNo'
+import UserBalance from '@/components/Home/UserBalance'
+import TransactionTable from '@/components/Home/TransactionTable'
 
 const index = () => {
   return (

@@ -9,33 +9,31 @@ const RootLayout = () => {
   const profilePicture = require("@/assets/images/Profile.png");
 
   return (
-    <Stack>
+    <Stack initialRouteName="(auth)">
+      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+
       <Stack.Screen
         name="(tabs)"
         options={{
-          title: "My home",
-          // headerStyle: { backgroundColor: "#f4511e" },
-          headerTintColor: "#fff",
-          headerTitleStyle: {
-            fontWeight: "bold",
-          },
-
-          headerTitle: () => (
-            <View style={styles.stackContainer}>
-              <View style={styles.profileContainer}>
-                <Image source={profilePicture} style={styles.profilePic} />
-                <View>
-                  <Text style={{ fontSize: 18, fontWeight: "bold" }}>
-                    Chelsea Immanuela
-                  </Text>
-                  <Text style={{ fontWeight: "light" }}>Personal Account</Text>
-                </View>
-              </View>
-              <Ionicons name="sunny-outline" size={38} color="#25292e" />
-            </View>
-          ),
+          headerShown: false
+          // headerTitle: () => (
+          //   <View style={styles.stackContainer}>
+          //     <View style={styles.profileContainer}>
+          //       <Image source={profilePicture} style={styles.profilePic} />
+          //       <View>
+          //         <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+          //           Chelsea Immanuela
+          //         </Text>
+          //         <Text style={{ fontWeight: "light" }}>Personal Account</Text>
+          //       </View>
+          //     </View>
+          //     <Ionicons name="sunny-outline" size={38} color="#25292e" />
+          //   </View>
+          // ),
         }}
       />
+
+      <Stack.Screen name="(transaction)" options={{ headerShown:false }} />
     </Stack>
   );
 };

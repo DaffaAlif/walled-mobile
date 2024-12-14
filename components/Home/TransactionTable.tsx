@@ -45,24 +45,6 @@ const TransactionTable = () => {
             date: "08 December 2024",
             amount: "75000",
           },
-          {
-            name: "Adityo Gizwanda",
-            type: "Transfer",
-            date: "08 December 2024",
-            amount: "75000",
-          },
-          {
-            name: "Adityo Gizwanda",
-            type: "Transfer",
-            date: "08 December 2024",
-            amount: "75000",
-          },
-          {
-            name: "Adityo Gizwanda",
-            type: "Transfer",
-            date: "08 December 2024",
-            amount: "75000",
-          },
         ]}
         renderItem={({ item }) => (
           <View style={styles.itemContainer}>
@@ -108,7 +90,7 @@ const styles = StyleSheet.create({
     margin: 20,
     backgroundColor: "#fff",
     borderRadius: 10,
-    maxHeight:300
+    maxHeight: 300,
   },
   itemContainer: {
     flexDirection: "row",

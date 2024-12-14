@@ -1,6 +1,6 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import IconButton from "./IconButton";
+import IconButton from "../IconButton";
 import React from "react";
 
 const UserBalance = () => {
@@ -14,8 +14,8 @@ const UserBalance = () => {
         </View>
       </View>
       <View>
-        <IconButton icon="add" label=""/>
-        <IconButton icon="send" label=""/>
+        <IconButton hrefURL={"../(transaction)/topup" } icon="add" label="" />
+        <IconButton hrefURL="../(transaction)/transfer" icon="send" label=""/>
       </View>
     </View>
   );

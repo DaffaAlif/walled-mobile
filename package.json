@@ -17,6 +17,7 @@
   "dependencies": {
     "@arismun/format-rupiah": "^3.0.0",
     "@expo/vector-icons": "^14.0.2",
+    "@react-native-picker/picker": "^2.10.2",
     "@react-native-vector-icons/material-icons": "^0.0.1",
     "@react-navigation/bottom-tabs": "^7.0.0",
     "@react-navigation/native": "^7.0.0",
