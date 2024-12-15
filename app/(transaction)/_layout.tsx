@@ -8,7 +8,7 @@ const TransactionLayout = () => {
   return (
     <Stack>
       <Stack.Screen
-        name="topup"
+        name="topup/index"
         options={{
           headerTitle: () => (
             <View style={styles.stackContainer}>
@@ -18,7 +18,7 @@ const TransactionLayout = () => {
         }}
       />
       <Stack.Screen
-        name="transfer"
+        name="transfer/index"
         options={{
           headerTitle: () => (
             <View style={styles.stackContainer}>

@@ -18,15 +18,17 @@ const RegisterForm = () => {
           <TextInput style={styles.inputText} placeholder="Avatar Url" />
         </View>
         <View style={styles.button}>
-          <ButtonText label="login" />
+          <ButtonText label="Register" />
         </View>
         <View style={styles.registerLink}>
-          <Text style={{ fontSize: 18 }}>Have account? </Text>{" "}
+          <Text style={{ fontSize: 18 }}>Have account? </Text>
           <Link
             href={"/(auth)/login"}
             style={{ color: "#19918F", fontSize: 18 }}
           >
-            Login here
+              <Text style={{ color: "#19918F", fontSize: 18 }}>
+              Login here
+            </Text>
           </Link>
         </View>
       </View>

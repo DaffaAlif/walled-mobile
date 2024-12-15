@@ -4,6 +4,7 @@ import AmountInput from "@/components/SharedComponents/AmountInput";
 import Notesinput from "@/components/SharedComponents/NotesInput";
 import DropdownPicker from "@/components/SharedComponents/DropdownPicker";
 import ButtonText from "@/components/SharedComponents/ButtonText";
+import { router } from "expo-router";
 
 const TopUpPage = () => {
   return (
@@ -14,7 +15,7 @@ const TopUpPage = () => {
         <Notesinput />
       </View>
       <View style={styles.buttonContainer}>
-        <ButtonText label="Top Up"/>
+        <ButtonText label="Top Up" onPress={()=> router.replace('/(transaction)/topup/success/2')}/>
       </View>
     </View>
   );

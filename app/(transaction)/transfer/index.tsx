@@ -4,6 +4,7 @@ import AmountInput from "@/components/SharedComponents/AmountInput";
 import Notesinput from "@/components/SharedComponents/NotesInput";
 
 import ButtonText from "@/components/SharedComponents/ButtonText";
+import { router } from "expo-router";
 
 const TransferPage = () => {
   return (
@@ -13,7 +14,7 @@ const TransferPage = () => {
         <Notesinput />
       </View>
       <View style={styles.buttonContainer}>
-        <ButtonText label="Transfer"/>
+        <ButtonText label="Transfer" onPress={()=> router.replace('/(transaction)/transfer/success/2')}/>
       </View>
     </View>
   );

@@ -9,7 +9,7 @@ const UserGreeting = () => {
         <Text style={{fontWeight:'bold', fontSize:20}}>Good Morning, Chelsea</Text>
         <Text style={{fontWeight:'ultralight', fontSize:16}}>Check all your incoming and outgoing transactions here</Text>
       </View>
-      <Image source={SunImage} style={{width:80, height:80, marginLeft:10, marginTop:10}}/>
+      <Image source={SunImage} style={{width:80, height:80, marginLeft:10, marginTop:10, resizeMode:'contain'}}/>
     </View>
   );
 };

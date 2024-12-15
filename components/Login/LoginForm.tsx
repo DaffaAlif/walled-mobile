@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import { Image, TextInput } from "react-native";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import ButtonText from "../SharedComponents/ButtonText";
 import React from "react";
 
@@ -18,15 +18,14 @@ const LoginForm = () => {
           ></TextInput>
         </View>
         <View style={styles.button}>
-          <ButtonText label="login" />
+          <ButtonText label="Login" onPress={() => router.replace('/')}/>
         </View>
         <View style={styles.registerLink}>
-          <Text style={{ fontSize: 18 }}>Don't have account? </Text>{" "}
-          <Link
-            href={"/(auth)/register"}
-            style={{ color: "#19918F", fontSize: 18 }}
-          >
-            Register here
+          <Text style={{ fontSize: 18 }}>Don't have account? </Text>
+          <Link href={"/(auth)/register"}>
+            <Text style={{ color: "#19918F", fontSize: 18 }}>
+              Register here
+            </Text>
           </Link>
         </View>
       </View>

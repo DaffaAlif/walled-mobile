@@ -4,6 +4,7 @@ import UserGreeting from '@/components/Home/UserGreeting'
 import UserAccountNo from '@/components/Home/UserAccountNo'
 import UserBalance from '@/components/Home/UserBalance'
 import TransactionTable from '@/components/Home/TransactionTable'
+import PressableCard from '@/components/SharedComponents/PressableCard'
 
 const index = () => {
   return (
@@ -11,6 +12,7 @@ const index = () => {
       <UserGreeting />
       <UserAccountNo/>
       <UserBalance/>
+      {/* <PressableCard/> */}
       <TransactionTable/>
     </View>
   )
