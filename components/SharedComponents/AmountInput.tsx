@@ -2,11 +2,10 @@ import { StyleSheet, Text, View, TextInput } from "react-native";
 import React, { useState } from "react";
 
 type Props = {
-    showBalance : boolean
-}
+  showBalance: boolean;
+};
 
-const AmountInput = ({showBalance} : Props) => {
-
+const AmountInput = ({ showBalance }: Props) => {
   return (
     <View style={styles.container}>
       <Text style={{ fontSize: 16, fontWeight: 400, color: "#B3B3B3" }}>

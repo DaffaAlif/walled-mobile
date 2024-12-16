@@ -4,7 +4,7 @@ import React from "react";
 
 type Props = {
     label : string
-    onPress : () => void
+    onPress? : () => void
 }
 
 const ButtonText = ({label, onPress} : Props) => {

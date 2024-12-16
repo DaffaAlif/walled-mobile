@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Stack, Tabs } from "expo-router";
 import { Link } from "expo-router";
@@ -7,6 +7,14 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { useState, useRef } from "react";
 import { Pressable, Animated, Modal, TouchableOpacity } from "react-native";
 
+type UserData = {
+  email: string;
+  fullname: string;
+  password: string;
+  phone_no: string;
+  username: string;
+};
+
 const HomeLayout = () => {
   const profilePicture = require("@/assets/images/Profile.png");
 
@@ -14,6 +22,34 @@ const HomeLayout = () => {
   const toggleModal = () => {
     setModalVisible(!modalVisible);
   };
+
+  const [data, setData] = useState<UserData>({
+    email: "",
+    fullname: "",
+    password: "",
+    phone_no: "",
+    username: "",
+  });
+
+
+  const [loading, setLoading] = useState(true);
+
+  const fetchDataUser = async () => {
+    try {
+      const response = await fetch("http://192.168.30.104:3000/users");
+      const data = await response.json();
+      setData(data[0]);
+      console.log(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchDataUser();
+  }, []);
 
   return (
     <Stack>
@@ -27,7 +63,7 @@ const HomeLayout = () => {
                   <Image source={profilePicture} style={styles.profilePic} />
                   <View>
                     <Text style={{ fontSize: 18, fontWeight: "bold" }}>
-                      Chelsea Immanuela
+                      {data?.fullname}
                     </Text>
                     <Text style={{ fontWeight: "light" }}>
                       Personal Account
@@ -49,7 +85,6 @@ const HomeLayout = () => {
                   onPress={toggleModal}
                 />
                 <View style={styles.popupContainer}>
-      
                   <Link href={"/(auth)/login"} style={styles.logoutButton}>
                     <Text
                       style={[
@@ -121,6 +156,6 @@ const styles = StyleSheet.create({
   logoutButton: {
     backgroundColor: "red",
     borderRadius: 10,
-    padding:10
+    padding: 10,
   },
 });
