@@ -5,14 +5,57 @@ import { Image } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 const HomeLayout = () => {
-
   return (
-    <Tabs >
+    <Tabs>
       <Tabs.Screen
         name="(home)"
         options={{
-          href: null,
           headerShown: false,
+          tabBarLabel: "Home",
+          tabBarLabelStyle: {
+            color: "#19918F",
+          },
+          tabBarIcon: () => (
+            <>
+              <Ionicons
+                name="home-sharp"
+                size={20}
+                style={{ color: "#19918F" }}
+              />
+            </>
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="(transaction)/topup"
+        options={{
+          headerShown: false,
+          tabBarLabel: "Top up",
+          tabBarLabelStyle: {
+            color: "#19918F",
+          },
+          tabBarIcon: () => (
+            <>
+              <Ionicons name="add" size={20} style={{ color: "#19918F" }} />
+            </>
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="(transaction)/transfer"
+        options={{
+          headerShown: false,
+          tabBarLabel: "Transfer",
+          tabBarLabelStyle: {
+            color: "#19918F",
+          },
+          tabBarIcon: () => (
+            <>
+              <Ionicons name="send" size={20} style={{ color: "#19918F" }} />
+            </>
+          ),
         }}
       />
     </Tabs>
@@ -20,27 +63,3 @@ const HomeLayout = () => {
 };
 
 export default HomeLayout;
-
-const styles = StyleSheet.create({
-  stackContainer: {
-    padding: 4,
-    flexDirection: "row",
-    alignItems: "center",
-    width: 200,
-    justifyContent: "flex-end",
-  },
-  profileContainer: {
-    flexDirection: "row",
-    gap: 8,
-    flex: 2,
-    alignItems: "center",
-  },
-
-  profilePic: {
-    borderRadius: 100,
-    borderWidth: 5,
-    borderColor: "#19918F",
-    width: 60,
-    height: 60,
-  },
-});

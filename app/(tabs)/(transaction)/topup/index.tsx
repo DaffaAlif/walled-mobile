@@ -15,7 +15,7 @@ const TopUpPage = () => {
         <Notesinput />
       </View>
       <View style={styles.buttonContainer}>
-        <ButtonText label="Top Up" onPress={()=> router.replace('/(transaction)/topup/success/2')}/>
+        <ButtonText label="Top Up" onPress={()=> router.replace('/(tabs)/(transaction)/topup/success/2')}/>
       </View>
     </View>
   );

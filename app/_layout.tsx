@@ -1,14 +1,10 @@
-import { StyleSheet, Text, View } from "react-native";
-import { Stack, Tabs } from "expo-router";
-import { Image } from "react-native";
-import Ionicons from "@expo/vector-icons/Ionicons";
+import { StyleSheet } from "react-native";
+import { Stack } from "expo-router";
 import { SessionProvider } from "@/context/authContext";
 
 import React from "react";
 
 const RootLayout = () => {
-  const profilePicture = require("@/assets/images/Profile.png");
-
   return (
     <SessionProvider>
       <Stack initialRouteName="(auth)">
@@ -19,32 +15,9 @@ const RootLayout = () => {
             headerShown: false,
           }}
         />
-        <Stack.Screen name="(transaction)" options={{ headerShown: false }} />
       </Stack>
     </SessionProvider>
   );
 };
 
 export default RootLayout;
-
-const styles = StyleSheet.create({
-  stackContainer: {
-    padding: 4,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  profileContainer: {
-    flexDirection: "row",
-    gap: 8,
-    alignItems: "center",
-  },
-
-  profilePic: {
-    borderRadius: 100,
-    borderWidth: 5,
-    borderColor: "#19918F",
-    width: 60,
-    height: 60,
-  },
-});

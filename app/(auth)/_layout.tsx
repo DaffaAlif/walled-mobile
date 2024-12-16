@@ -18,6 +18,14 @@ const TransactionLayout = () => {
           headerShown: false,
         }}
       />
+      <Stack.Screen
+        name="modal"
+        options={{
+          presentation: 'modal',
+        
+          
+        }}
+      />
     </Stack>
   );
 };

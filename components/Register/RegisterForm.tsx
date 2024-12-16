@@ -2,9 +2,15 @@ import { StyleSheet, Text, View } from "react-native";
 import { Image, TextInput } from "react-native";
 import { Link } from "expo-router";
 import ButtonText from "../SharedComponents/ButtonText";
+import Checkbox from "expo-checkbox";
 import React from "react";
 
-const RegisterForm = () => {
+type Props = {
+  isChecked: boolean;
+  setIsChecked: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const RegisterForm = ({ isChecked, setIsChecked }: Props) => {
   const walledLogo = require("@/assets/images/WalledLogo.png");
   return (
     <View style={styles.container}>
@@ -17,6 +23,15 @@ const RegisterForm = () => {
 
           <TextInput style={styles.inputText} placeholder="Avatar Url" />
         </View>
+        <View style={{ flexDirection: "row", marginTop: 20 }}>
+          <Checkbox value={isChecked} onValueChange={setIsChecked} />
+          <Text style={{ marginLeft: 10 }}> I have read and agree to the</Text>
+          <Link href="/(auth)/modal" style={{ color: "#19918F" }}>
+            <Text style={{ color: "#19918F" }}> Terms and Condition</Text>
+            <Text style={{ color: "red" }}>*</Text>
+          </Link>
+        </View>
+
         <View style={styles.button}>
           <ButtonText label="Register" />
         </View>
@@ -26,9 +41,7 @@ const RegisterForm = () => {
             href={"/(auth)/login"}
             style={{ color: "#19918F", fontSize: 18 }}
           >
-              <Text style={{ color: "#19918F", fontSize: 18 }}>
-              Login here
-            </Text>
+            <Text style={{ color: "#19918F", fontSize: 18 }}>Login here</Text>
           </Link>
         </View>
       </View>
@@ -43,7 +56,7 @@ const styles = StyleSheet.create({
   imageLogo: {
     width: 250,
     resizeMode: "contain",
-    flex: 2,
+    flex: 1,
     alignSelf: "center",
   },
   formContainer: {
@@ -58,7 +71,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 10,
   },
-  button: { marginTop: 50 },
+  button: { marginTop: 30 },
   inputText: {
     backgroundColor: "#FAFBFD",
     borderRadius: 10,

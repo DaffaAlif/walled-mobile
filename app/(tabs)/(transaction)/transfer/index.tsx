@@ -14,7 +14,7 @@ const TransferPage = () => {
         <Notesinput />
       </View>
       <View style={styles.buttonContainer}>
-        <ButtonText label="Transfer" onPress={()=> router.replace('/(transaction)/transfer/success/2')}/>
+        <ButtonText label="Transfer" onPress={()=> router.replace('/(tabs)/(transaction)/transfer/success/2')}/>
       </View>
     </View>
   );

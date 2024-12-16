@@ -14,8 +14,8 @@ const UserBalance = () => {
         </View>
       </View>
       <View>
-        <IconButton hrefURL={"../(transaction)/topup" } icon="add" label="" />
-        <IconButton hrefURL="../(transaction)/transfer" icon="send" label=""/>
+        <IconButton hrefURL={"./(transaction)/topup" } icon="add" label="" />
+        <IconButton hrefURL="./(transaction)/transfer" icon="send" label=""/>
       </View>
     </View>
   );

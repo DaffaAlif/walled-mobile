@@ -15,7 +15,7 @@ const index = () => {
 
   const fetchDataUser = async () => {
     try {
-      const response = await fetch("http://192.168.30.104:3000/users");
+      const response = await fetch("http://192.168.1.9:3000/users");
       const data = await response.json();
       setData(data);
       console.log(data);
