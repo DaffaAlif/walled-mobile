@@ -1,8 +1,8 @@
-import { StyleSheet } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import { Stack } from "expo-router";
-import { SessionProvider } from "@/context/authContext";
-
+import Ionicons from "@expo/vector-icons/Ionicons";
 import React from "react";
+import { router } from "expo-router";
 
 const TransferLayout = () => {
   return (
@@ -10,8 +10,14 @@ const TransferLayout = () => {
       <Stack.Screen
         name="index"
         options={{
-          headerShown: false,
-          
+          headerTitle: () => (
+            <View style={styles.container}>
+              <Pressable style={{width:30}} onPress={()=> router.replace('/(tabs)/(home)')}>
+                <Ionicons name="arrow-back" size={20}/>
+              </Pressable>
+              <Text style={{ fontWeight: "bold", fontSize:20 }}>Transfer</Text>
+            </View>
+          ),
         }}
       />
       <Stack.Screen name="success/[id]" options={{ headerShown: false }} />
@@ -20,3 +26,11 @@ const TransferLayout = () => {
 };
 
 export default TransferLayout;
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection : 'row',
+    alignItems:'center',
+    padding:10
+  }
+});
