@@ -2,14 +2,21 @@ import { StyleSheet, Text, View, TextInput } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import React from "react";
 
-const DropdownPicker = () => {
+type Props = {
+  selectedValue: string;
+  setSelectedValue: React.Dispatch<React.SetStateAction<string>>;
+};
+
+const DropdownPicker = ({ selectedValue, setSelectedValue }: Props) => {
   return (
     <View style={styles.container}>
-      <Picker>
-        <Picker.Item label="BYOND Pay" value="BYOND Pay" />
-        <Picker.Item label="Gopay" value="Gopay" />
-        <Picker.Item label="OVO" value="OVO" />
-
+      <Picker
+        selectedValue={selectedValue}
+        onValueChange={(itemValue) => setSelectedValue(itemValue)}
+      >
+        <Picker.Item label="BYOND Pay" value="8261546573" />
+        <Picker.Item label="Gopay" value="8698459525" />
+        <Picker.Item label="OVO" value="5389763061" />
       </Picker>
     </View>
   );

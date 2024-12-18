@@ -1,7 +1,11 @@
 import React from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import { FormatRupiah } from "@arismun/format-rupiah";
-const TransactionTable = () => {
+const TransactionTable = (transactions: any) => {
+  // {
+  //   console.log(transactions.transactions);
+  // }
+  
   return (
     <View style={styles.container}>
       <Text style={{ fontWeight: 700, fontSize: 16 }}>Transaction History</Text>
@@ -13,46 +17,17 @@ const TransactionTable = () => {
           marginVertical: 8,
         }}
       />
+      
       <FlatList
-        data={[
-          {
-            name: "Adityo Gizwanda",
-            type: "Transfer",
-            date: "08 December 2024",
-            amount: "75000",
-          },
-          {
-            name: "Adityo Gizwanda",
-            type: "Top Up",
-            date: "08 December 2024",
-            amount: "75000",
-          },
-          {
-            name: "Adityo Gizwanda",
-            type: "Top Up",
-            date: "08 December 2024",
-            amount: "75000",
-          },
-          {
-            name: "Adityo Gizwanda",
-            type: "Transfer",
-            date: "08 December 2024",
-            amount: "75000",
-          },
-          {
-            name: "Adityo Gizwanda",
-            type: "Transfer",
-            date: "08 December 2024",
-            amount: "75000",
-          },
-        ]}
+        data={transactions?.transactions}
         renderItem={({ item }) => (
           <View style={styles.itemContainer}>
             <View style={styles.itemProfileContainer}>
               <View style={styles.itemProfilePicture} />
               <View style={{ marginLeft: 10 }}>
-                <Text style={{ fontSize: 14, fontWeight: 400 }}>
-                  {item?.name}
+                <Text style={{ fontSize: 14, fontWeight: 'bold' }}>
+           
+                {item?.userDataFrom?.fullname}
                 </Text>
                 <Text style={{ fontSize: 12, fontWeight: 400 }}>
                   {item?.type}
@@ -68,10 +43,10 @@ const TransactionTable = () => {
               <Text
                 style={{
                   fontSize: 20,
-                  color: `${item.type == "Transfer" ? "red" : "green"}`,
+                  color: `${item.type == "transfer" ? "red" : "green"}`,
                 }}
               >
-                {item.type == "Transfer" ? "- " : "+ "}
+                {item.type == "transfer" ? "- " : "+ "}
                 <FormatRupiah value={parseFloat(item?.amount)} />
               </Text>
             </View>

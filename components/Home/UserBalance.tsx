@@ -3,13 +3,13 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import IconButton from "../SharedComponents/IconButton";
 import React from "react";
 
-const UserBalance = () => {
+const UserBalance = (userData : any) => {
   return (
     <View style={styles.greetingContainer}>
       <View>
         <Text style={{ fontSize: 16, fontWeight: 400 }}>Balance</Text>
         <View style={styles.balanceText}>
-          <Text style={{ fontSize: 24, fontWeight: 600 }}>Rp 10.000.000</Text>
+          <Text style={{ fontSize: 24, fontWeight: 600 }}>{userData?.userData?.balance}</Text>
           <Ionicons name="eye-outline" size={20} style={{ marginLeft: 8 }} />
         </View>
       </View>

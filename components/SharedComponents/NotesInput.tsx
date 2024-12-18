@@ -2,7 +2,12 @@ import { StyleSheet, Text, View, TextInput } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import React from "react";
 
-const Notesinput = () => {
+type Props = {
+  notes: string;
+  setNotes: React.Dispatch<React.SetStateAction<string>>;
+};
+
+const Notesinput = ({ notes, setNotes }: Props) => {
   return (
     <View style={styles.container}>
       <Text style={{ fontSize: 16, fontWeight: 400, color: "#B3B3B3" }}>
@@ -13,13 +18,10 @@ const Notesinput = () => {
           editable
           style={{ flex: 1, fontSize: 16 }}
           inputMode="text"
-
-          //   onChangeText={text => onChangeText(text)}
-          //   value={value}
-          //   style={styles.textInput}
+          value={notes}
+          onChangeText={setNotes}
         />
       </View>
-     
 
       <View
         style={{

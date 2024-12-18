@@ -1,14 +1,14 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const UserAccountNo = () => {
+const UserAccountNo = (userData: any) => {
   return (
     <View style={styles.greetingContainer}>
       <Text style={{ fontWeight: 400, fontSize: 20, color: "#fff" }}>
         Account No.
       </Text>
       <Text style={{ fontWeight: "bold", fontSize: 20, color: "#fff" }}>
-        100899
+        {userData?.userData?.user_id}
       </Text>
     </View>
   );

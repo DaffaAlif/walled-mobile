@@ -6,6 +6,8 @@ import { Image } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useState, useRef } from "react";
 import { Pressable, Animated, Modal, TouchableOpacity } from "react-native";
+import { currentUser } from "@/api/api";
+import { useSession } from "@/context/authContext";
 
 type UserData = {
   email: string;
@@ -31,25 +33,28 @@ const HomeLayout = () => {
     username: "",
   });
 
+  const { session } = useSession();
+  console.log(data, "dengan token : ", session);
 
   const [loading, setLoading] = useState(true);
 
-  const fetchDataUser = async () => {
-    try {
-      const response = await fetch("http://192.168.1.9:3000/users");
-      const data = await response.json();
-      setData(data[0]);
-      console.log(data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    } finally {
-      setLoading(false);
+  const fetchUser = async () => {
+    if (session) {
+      try {
+        const response = await currentUser(String(session));
+        const data = response;
+        setData(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
   useEffect(() => {
-    fetchDataUser();
-  }, []);
+    fetchUser();
+  }, [session]);
 
   return (
     <Stack>

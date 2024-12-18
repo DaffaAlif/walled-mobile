@@ -2,7 +2,12 @@ import { StyleSheet, Text, View, TextInput } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import React from "react";
 
-const AccountNoInput = () => {
+type Props = {
+  accountNo: string;
+  setAccountNo: React.Dispatch<React.SetStateAction<string>>;
+};
+
+const AccountNoInput = ({ accountNo, setAccountNo }: Props) => {
   return (
     <View style={styles.container}>
       <View style={styles.amountInputContainer}>
@@ -13,13 +18,11 @@ const AccountNoInput = () => {
         </Text>
         <TextInput
           editable
-          style={{ flex: 1, color:"white" }}
+          style={{ flex: 1, color: "white" }}
           inputMode="numeric"
-          placeholderTextColor ='white'
-
-          //   onChangeText={text => onChangeText(text)}
-          //   value={value}
-          //   style={styles.textInput}
+          placeholderTextColor="white"
+          onChangeText={(text) => setAccountNo(text)}
+          value={accountNo}
         />
       </View>
       <View
@@ -43,7 +46,7 @@ const styles = StyleSheet.create({
   },
   amountInputContainer: {
     flexDirection: "row",
-    alignItems:'center',
-    justifyContent:'center'
+    alignItems: "center",
+    justifyContent: "center",
   },
 });

@@ -1,12 +1,15 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const UserGreeting = () => {
+
+const UserGreeting = (userData : any) => {
   const SunImage = require("@/assets/images/sun-greetings.png");
+  
   return (
+
     <View style={styles.greetingContainer}>
       <View style={styles.textContainer}>
-        <Text style={{fontWeight:'bold', fontSize:20}}>Good Morning, Chelsea</Text>
+        <Text style={{fontWeight:'bold', fontSize:20}}>Good Morning, {userData?.userData?.username}</Text>
         <Text style={{fontWeight:'ultralight', fontSize:16}}>Check all your incoming and outgoing transactions here</Text>
       </View>
       <Image source={SunImage} style={{width:80, height:80, marginLeft:10, marginTop:10, resizeMode:'contain'}}/>
